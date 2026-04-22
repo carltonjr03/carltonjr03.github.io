@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Ridge Intelligence — AI & Data Consulting | Asheville, NC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #fafaf8; color: #1c1c1e; line-height: 1.6; }
+
+  /* NAV */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; border-bottom: 0.5px solid rgba(0,0,0,0.08); background: #fff; }
+  .nav-logo { font-size: 15px; font-weight: 600; color: #1c1c1e; letter-spacing: -0.01em; }
+  .nav-logo span { color: #185FA5; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a { font-size: 13px; color: #48484a; text-decoration: none; }
+  .nav-links a:hover { color: #1c1c1e; }
+  .nav-cta { font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 8px; border: 1px solid #185FA5; color: #185FA5; background: transparent; cursor: pointer; text-decoration: none; }
+  .nav-cta:hover { background: #E6F1FB; }
+
+  /* HERO */
+  .hero { max-width: 720px; margin: 0 auto; padding: 72px 40px 64px; }
+  .hero-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.07em; color: #185FA5; text-transform: uppercase; margin-bottom: 18px; }
+  .hero h1 { font-size: 40px; font-weight: 600; line-height: 1.15; color: #1c1c1e; margin-bottom: 22px; letter-spacing: -0.02em; }
+  .hero-sub { font-size: 17px; color: #48484a; line-height: 1.7; margin-bottom: 36px; max-width: 540px; }
+  .hero-btns { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { font-size: 14px; font-weight: 600; padding: 13px 24px; border-radius: 9px; background: #185FA5; color: #fff; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+  .btn-primary:hover { background: #0C447C; }
+  .btn-ghost { font-size: 14px; color: #48484a; background: transparent; border: none; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .btn-ghost:hover { color: #1c1c1e; }
+
+  /* TRUST BAR */
+  .trust-bar { border-top: 0.5px solid rgba(0,0,0,0.08); border-bottom: 0.5px solid rgba(0,0,0,0.08); background: #fff; padding: 16px 40px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .trust-item { font-size: 12.5px; color: #48484a; display: flex; align-items: center; gap: 7px; }
+  .trust-dot { width: 6px; height: 6px; border-radius: 50%; background: #1D9E75; flex-shrink: 0; }
+
+  /* SECTIONS */
+  .section { max-width: 720px; margin: 0 auto; padding: 64px 40px; }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #185FA5; text-transform: uppercase; margin-bottom: 10px; }
+  .section h2 { font-size: 26px; font-weight: 600; color: #1c1c1e; margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.25; }
+  .section-body { font-size: 15px; color: #48484a; line-height: 1.75; margin-bottom: 36px; }
+
+  /* SERVICES GRID */
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .svc { background: #f2f2ef; border-radius: 12px; padding: 20px; }
+  .svc-icon { width: 32px; height: 32px; border-radius: 8px; background: #E6F1FB; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  .svc-icon svg { width: 16px; height: 16px; stroke: #185FA5; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .svc-name { font-size: 14px; font-weight: 600; color: #1c1c1e; margin-bottom: 5px; }
+  .svc-desc { font-size: 13px; color: #48484a; line-height: 1.6; }
+
+  /* DIVIDER */
+  hr { border: none; border-top: 0.5px solid rgba(0,0,0,0.08); }
+
+  /* ABOUT */
+  .about-wrap { display: flex; gap: 20px; align-items: flex-start; }
+  .about-avatar { width: 56px; height: 56px; border-radius: 50%; background: #E6F1FB; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; color: #185FA5; flex-shrink: 0; }
+  .about-text { flex: 1; }
+  .about-name { font-size: 15px; font-weight: 600; color: #1c1c1e; margin-bottom: 2px; }
+  .about-role { font-size: 12px; color: #8e8e93; margin-bottom: 14px; }
+  .about-body { font-size: 14px; color: #48484a; line-height: 1.75; }
+
+  /* AUDIT CTA */
+  .audit-section { background: #E6F1FB; }
+  .audit-inner { max-width: 720px; margin: 0 auto; padding: 64px 40px; text-align: center; }
+  .audit-inner h2 { font-size: 26px; font-weight: 600; color: #0C447C; margin-bottom: 12px; line-height: 1.3; letter-spacing: -0.01em; }
+  .audit-sub { font-size: 15px; color: #185FA5; line-height: 1.7; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .audit-btn { font-size: 14px; font-weight: 600; padding: 14px 30px; border-radius: 9px; background: #185FA5; color: #fff; border: none; cursor: pointer; display: inline-block; text-decoration: none; }
+  .audit-btn:hover { background: #0C447C; }
+  .audit-fine { font-size: 12px; color: #185FA5; margin-top: 14px; opacity: 0.75; }
+
+  /* FAQ */
+  .faq { margin-top: 8px; }
+  .faq-item { border-top: 0.5px solid rgba(0,0,0,0.08); padding: 16px 0; }
+  .faq-q { font-size: 14px; font-weight: 600; color: #1c1c1e; margin-bottom: 7px; }
+  .faq-a { font-size: 13.5px; color: #48484a; line-height: 1.7; }
+
+  /* FOOTER */
+  footer { border-top: 0.5px solid rgba(0,0,0,0.08); background: #fff; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer-logo { font-size: 13px; font-weight: 600; color: #48484a; }
+  .footer-logo span { color: #185FA5; }
+  .footer-right { font-size: 12px; color: #8e8e93; }
+
+  @media (max-width: 600px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 48px 20px 40px; }
+    .hero h1 { font-size: 28px; }
+    .section { padding: 48px 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .trust-bar { padding: 14px 20px; gap: 14px; }
+    .audit-inner { padding: 48px 20px; }
+    footer { padding: 20px; }
+    .about-wrap { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Blue <span>Ridge</span> Intelligence</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#audit" class="nav-cta">Book a free audit</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Asheville, NC &nbsp;·&nbsp; AI & Data Consulting</div>
+  <h1>Your business runs on gut feel.<br>Imagine what it could do with data.</h1>
+  <p class="hero-sub">Blue Ridge Intelligence helps Western North Carolina small businesses put AI and data to work — without the big-firm price tag or the confusing tech-speak. Just clear, practical tools that make your day easier and your decisions smarter.</p>
+  <div class="hero-btns">
+    <a href="#audit" class="btn-primary">Book your free AI audit</a>
+    <a href="#services" class="btn-ghost">See what we do &rarr;</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div>Locally owned &amp; operated in Asheville</div>
+  <div class="trust-item"><div class="trust-dot"></div>10+ years in data science &amp; analytics</div>
+  <div class="trust-item"><div class="trust-dot"></div>No jargon. No fluff. Just results.</div>
+  <div class="trust-item"><div class="trust-dot"></div>Free 1-hour audit, no strings attached</div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-label">What we do</div>
+  <h2>Practical AI for real businesses —<br>not just the big ones</h2>
+  <p class="section-body">You don't need a full-time data team or a six-figure software contract. A few smart tools, set up right, can save you hours every week and help you see your business more clearly than ever before.</p>
+  <div class="services-grid">
+    <div class="svc">
+      <div class="svc-icon">
+        <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5"/><path d="M8 5v3l2 2"/></svg>
+      </div>
+      <div class="svc-name">AI assistant setup</div>
+      <div class="svc-desc">A custom Claude-powered assistant trained on your business — answers customer questions, drafts emails, and handles repetitive tasks 24/7.</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">
+        <svg viewBox="0 0 16 16"><path d="M2 12l4-4 3 3 5-6"/></svg>
+      </div>
+      <div class="svc-name">Data dashboards</div>
+      <div class="svc-desc">Stop digging through spreadsheets. We build live dashboards that show you exactly what's happening in your business at a glance.</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">
+        <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1"/><path d="M5 7h6M5 10h4"/></svg>
+      </div>
+      <div class="svc-name">Workflow automation</div>
+      <div class="svc-desc">Reports, invoices, follow-up emails, data entry — we identify what's eating your time and automate it so you can focus on what you do best.</div>
+    </div>
+    <div class="svc">
+      <div class="svc-icon">
+        <svg viewBox="0 0 16 16"><path d="M8 2v4m0 4v4M2 8h4m4 0h4"/></svg>
+      </div>
+      <div class="svc-name">Team AI training</div>
+      <div class="svc-desc">A hands-on workshop that teaches your team how to use AI tools confidently — tailored to your industry, your tools, and your actual daily work.</div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-label">About</div>
+  <h2>A neighbor who happens to know<br>a lot about data</h2>
+  <div class="about-wrap">
+    <div class="about-avatar">BRI</div>
+    <div class="about-text">
+      <div class="about-name">Blue Ridge Intelligence</div>
+      <div class="about-role">Founded in Asheville, NC</div>
+      <p class="about-body">I'm a data scientist and analytics manager who's spent over a decade helping organizations make sense of their data — most recently leading a team of analysts at a clinical diagnostics lab right here in WNC. I've built dashboards, deployed AI systems, and translated complex data into decisions that actually matter.<br><br>I started Blue Ridge Intelligence because I kept seeing local businesses struggle with problems I knew how to solve. You shouldn't need a Fortune 500 budget to run a smarter business. If you're in Asheville, Weaverville, Black Mountain, Brevard, or anywhere in the greater WNC area, I'd love to sit down with you and figure out what's possible.</p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- AUDIT CTA -->
+<div class="audit-section" id="audit">
+  <div class="audit-inner">
+    <h2>Not sure where to start?<br>Let's figure it out together — for free.</h2>
+    <p class="audit-sub">Book a no-pressure, 1-hour AI Readiness Audit. We'll look at how your business currently runs, identify where AI and data tools could save you the most time and money, and leave you with a clear picture of your options — whether you hire us or not.</p>
+    <a href="mailto:hello@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free audit</a>
+    <p class="audit-fine">No cost. No commitment. Just a conversation.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-label">FAQ</div>
+  <h2>Good questions we hear a lot</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">Do I need to be tech-savvy to work with you?</div>
+      <div class="faq-a">Not at all. Most of our clients are experts in their own field — restaurants, retail, healthcare, construction — not in technology. We translate between the two so you never have to pretend to understand something you don't.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much does this typically cost?</div>
+      <div class="faq-a">Projects start around $500 for a focused AI setup or workflow fix. Ongoing monthly support starts at $500/month. Everything is quoted clearly upfront — no surprise invoices.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my business data safe?</div>
+      <div class="faq-a">Yes. We work within enterprise-grade tools like Anthropic's Claude for Teams, which comes with strict data privacy protections. We'll walk you through exactly what goes where before we touch anything.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What kinds of businesses do you work with?</div>
+      <div class="faq-a">Small and mid-sized businesses across WNC — healthcare practices, breweries, retail shops, contractors, creative agencies, and more. If you have data you're not using or tasks you're doing by hand, we can probably help.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Blue <span>Ridge</span> Intelligence &nbsp;·&nbsp; Asheville, NC</div>
+  <div class="footer-right">hello@blueridgeintelligence.com</div>
+</footer>
+
+</body>
+</html>
