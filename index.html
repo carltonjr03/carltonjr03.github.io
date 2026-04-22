@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Ridge Intelligence — AI & Data Consulting | Asheville, NC</title>
+<meta name="description" content="Blue Ridge Intelligence helps Western North Carolina small businesses save time and make smarter decisions with AI and data tools — no big-firm price tag, no tech-speak. Free 1-hour audit for WNC businesses.">
+<meta name="keywords" content="AI consulting Asheville NC, data analytics WNC, small business AI, workflow automation Asheville, Blue Ridge Intelligence">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='5' y='55' width='12' height='30' rx='3' fill='%23378ADD'/><rect x='20' y='38' width='12' height='47' rx='3' fill='%23185FA5'/><rect x='35' y='25' width='12' height='60' rx='3' fill='%230C447C'/><rect x='50' y='38' width='12' height='47' rx='3' fill='%23185FA5'/><rect x='65' y='55' width='12' height='30' rx='3' fill='%23378ADD'/><rect x='80' y='68' width='12' height='17' rx='3' fill='%2385B7EB'/></svg>">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: system-ui, -apple-system, sans-serif; background: #fafaf8; color: #1c1c1e; line-height: 1.6; }
@@ -15,8 +18,8 @@
   .nav-links { display: flex; gap: 24px; }
   .nav-links a { font-size: 13px; color: #48484a; text-decoration: none; }
   .nav-links a:hover { color: #1c1c1e; }
-  .nav-cta { font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 8px; border: 1px solid #185FA5; color: #185FA5; background: transparent; cursor: pointer; text-decoration: none; }
-  .nav-cta:hover { background: #E6F1FB; }
+  .nav-cta { font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 8px; border: none; color: #fff; background: #185FA5; cursor: pointer; text-decoration: none; }
+  .nav-cta:hover { background: #0C447C; }
 
   /* HERO */
   .hero-outer { position: relative; overflow: hidden; background: #eef5fb; }
@@ -70,7 +73,11 @@
   .audit-btn:hover { background: #0C447C; }
   .audit-fine { font-size: 12px; color: #185FA5; margin-top: 14px; opacity: 0.75; }
 
-  /* FAQ */
+  /* POST-FAQ CTA */
+  .faq-cta { margin-top: 32px; padding-top: 28px; border-top: 0.5px solid rgba(0,0,0,0.08); text-align: center; }
+  .faq-cta p { font-size: 15px; color: #48484a; margin-bottom: 16px; }
+  .faq-cta a { font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 9px; background: #185FA5; color: #fff; text-decoration: none; display: inline-block; }
+  .faq-cta a:hover { background: #0C447C; }
   .faq { margin-top: 8px; }
   .faq-item { border-top: 0.5px solid rgba(0,0,0,0.08); padding: 16px 0; }
   .faq-q { font-size: 14px; font-weight: 600; color: #1c1c1e; margin-bottom: 7px; }
@@ -80,11 +87,29 @@
   footer { border-top: 0.5px solid rgba(0,0,0,0.08); background: #fff; padding: 24px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
   .footer-logo { font-size: 13px; font-weight: 600; color: #48484a; }
   .footer-logo span { color: #185FA5; }
-  .footer-right { font-size: 12px; color: #8e8e93; }
+  .footer-right { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .footer-right a { font-size: 12px; color: #8e8e93; text-decoration: none; }
+  .footer-right a:hover { color: #185FA5; }
+
+  /* MOBILE MENU */
+  .mobile-menu-btn { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; border-radius: 6px; }
+  .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: #1c1c1e; border-radius: 2px; transition: all 0.25s ease; }
+  .mobile-menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
+  .mobile-menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav-drawer { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 0.5px solid rgba(0,0,0,0.08); z-index: 100; padding: 8px 0 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+  .mobile-nav-drawer a { display: block; font-size: 15px; color: #1c1c1e; text-decoration: none; padding: 12px 24px; }
+  .mobile-nav-drawer a:hover { background: #f5f5f3; color: #185FA5; }
+  .mobile-nav-drawer .mobile-cta { margin: 8px 24px 0; display: block; text-align: center; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 8px; background: #185FA5; color: #fff; text-decoration: none; }
+  .mobile-nav-drawer .mobile-cta:hover { background: #0C447C; }
+  nav { position: relative; }
 
   @media (max-width: 600px) {
     nav { padding: 14px 20px; }
     .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .mobile-menu-btn { display: flex; }
+    .mobile-nav-drawer.open { display: block; }
     .hero { padding: 48px 20px 140px; }
     .hero h1 { font-size: 28px; }
     .section { padding: 48px 20px; }
@@ -124,6 +149,15 @@
     <a href="#faq">FAQ</a>
   </div>
   <a href="#audit" class="nav-cta">Book a free audit</a>
+  <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-nav-drawer" id="mobileMenu">
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#audit" class="mobile-cta">Book a free audit</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -300,12 +334,30 @@
       <div class="faq-a">Small and mid-sized businesses across WNC — healthcare practices, breweries, retail shops, contractors, creative agencies, and more. If you have data you're not using or tasks you're doing by hand, we can probably help.</div>
     </div>
   </div>
+
 </section>
 
 <footer>
-  <div class="footer-logo">Blue <span>Ridge</span> Intelligence &nbsp;·&nbsp; Asheville, NC</div>
-  <div class="footer-right">hello@blueridgeintelligence.com</div>
+  <div class="footer-logo">Blue <span>Ridge</span> Intelligence &nbsp;·&nbsp; Weaverville, NC</div>
+  <div class="footer-right">
+    <a href="mailto:hello@blueridgeintelligence.com">hello@blueridgeintelligence.com</a>
+    <a href="https://www.linkedin.com/company/blue-ridge-intelligence" target="_blank">LinkedIn</a>
+  </div>
 </footer>
 
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link, .mobile-cta').forEach(link => {
+    link.addEventListener('click', () => {
+      menuBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>
