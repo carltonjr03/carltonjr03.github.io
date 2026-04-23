@@ -205,6 +205,50 @@
     .svc-back { margin: 16px 20px 0; }
   }
 
+  /* WNC NIGHT SKY STRIP */
+  .wnc-strip { position: relative; width: 100%; height: 220px; overflow: hidden; background: #1a3a5c; }
+  .wnc-strip-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .wnc-strip-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(12,68,124,0.55) 0%, rgba(24,95,165,0.3) 50%, rgba(12,68,124,0.55) 100%); }
+  .wnc-strip-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .wnc-strip-text p { font-size: 18px; font-weight: 600; color: #fff; letter-spacing: -0.01em; line-height: 1.5; text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
+  .wnc-strip-text span { font-size: 12px; font-weight: 400; color: #B5D4F4; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 6px; }
+
+  /* HOW IT WORKS */
+  .hiw-section { background: #0C447C; }
+  .hiw-inner { max-width: 860px; margin: 0 auto; padding: 64px 40px; }
+  .hiw-inner .section-label { color: #85B7EB; }
+  .hiw-inner h2 { font-size: 26px; font-weight: 600; color: #fff; margin-bottom: 48px; letter-spacing: -0.01em; line-height: 1.25; }
+  .hiw-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; }
+  .hiw-steps::before { content: ''; position: absolute; top: 28px; left: calc(16.67% + 20px); right: calc(16.67% + 20px); height: 1px; background: rgba(255,255,255,0.2); }
+  .hiw-step { text-align: center; padding: 0 20px; }
+  .hiw-num { width: 56px; height: 56px; border-radius: 50%; background: #185FA5; border: 2px solid #378ADD; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: #fff; margin: 0 auto 20px; position: relative; z-index: 1; }
+  .hiw-title { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .hiw-desc { font-size: 13px; color: #85B7EB; line-height: 1.65; }
+
+  /* BEFORE / AFTER */
+  .ba-section { background: #f5f5f2; position: relative; overflow: hidden; }
+  .ba-topo { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.12; pointer-events: none; }
+  .ba-inner { max-width: 860px; margin: 0 auto; padding: 64px 40px; position: relative; z-index: 1; }
+  .ba-inner h2 { font-size: 26px; font-weight: 600; color: #1c1c1e; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .ba-inner .section-label { color: #185FA5; }
+  .ba-subtitle { font-size: 15px; color: #48484a; margin-bottom: 36px; line-height: 1.7; }
+  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ba-col { border-radius: 14px; padding: 28px; }
+  .ba-col-before { background: #fff; border: 0.5px solid rgba(0,0,0,0.1); }
+  .ba-col-after { background: #185FA5; }
+  .ba-col-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .ba-col-before .ba-col-label { color: #8e8e93; }
+  .ba-col-after .ba-col-label { color: #85B7EB; }
+  .ba-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+  .ba-item:last-child { margin-bottom: 0; }
+  .ba-dot { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+  .ba-col-before .ba-dot { background: #fee2e2; color: #dc2626; }
+  .ba-col-after .ba-dot { background: rgba(255,255,255,0.2); color: #fff; }
+  .ba-item-text { font-size: 13.5px; line-height: 1.55; }
+  .ba-col-before .ba-item-text { color: #48484a; }
+  .ba-col-after .ba-item-text { color: #deedf8; }
+  .ba-col-after .ba-item-text strong { color: #fff; display: block; }
+
   @media (max-width: 600px) {
     nav { padding: 14px 20px; }
     .nav-links { display: none; }
@@ -219,6 +263,13 @@
     .audit-inner { padding: 48px 20px; }
     footer { padding: 20px; }
     .about-wrap { flex-direction: column; }
+    .hiw-steps { grid-template-columns: 1fr; gap: 32px; }
+    .hiw-steps::before { display: none; }
+    .hiw-inner { padding: 48px 20px; }
+    .ba-grid { grid-template-columns: 1fr; }
+    .ba-inner { padding: 48px 20px; }
+    .wnc-strip { height: 160px; }
+    .wnc-strip-text p { font-size: 15px; padding: 0 20px; }
   }
 </style>
 </head>
@@ -362,6 +413,40 @@
   <div class="trust-item"><div class="trust-dot"></div>Free 1-hour audit, no strings attached</div>
 </div>
 
+<!-- WNC NIGHT SKY STRIP -->
+<div class="wnc-strip">
+  <svg class="wnc-strip-svg" viewBox="0 0 1440 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0d2a45"/>
+        <stop offset="100%" stop-color="#1e5080"/>
+      </linearGradient>
+      <linearGradient id="treeLine" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0a2030"/>
+        <stop offset="100%" stop-color="#0d2840"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="220" fill="url(#skyGrad)"/>
+    <circle cx="120" cy="30" r="1" fill="white" opacity="0.6"/>
+    <circle cx="340" cy="18" r="1.2" fill="white" opacity="0.5"/>
+    <circle cx="580" cy="25" r="0.8" fill="white" opacity="0.7"/>
+    <circle cx="820" cy="12" r="1" fill="white" opacity="0.4"/>
+    <circle cx="1060" cy="22" r="1.2" fill="white" opacity="0.6"/>
+    <circle cx="1280" cy="15" r="0.9" fill="white" opacity="0.5"/>
+    <circle cx="200" cy="50" r="0.8" fill="white" opacity="0.3"/>
+    <circle cx="700" cy="40" r="1" fill="white" opacity="0.4"/>
+    <circle cx="1100" cy="35" r="0.8" fill="white" opacity="0.5"/>
+    <path d="M0,220 L0,130 C120,120 200,90 320,82 C440,74 500,100 620,96 C740,92 820,68 960,60 C1100,52 1200,80 1320,76 C1380,74 1420,82 1440,80 L1440,220 Z" fill="#1e4a6e" opacity="0.8"/>
+    <path d="M0,220 L0,155 C80,148 160,132 260,126 C360,120 420,140 520,136 C620,132 700,112 820,106 C940,100 1020,124 1140,120 C1260,116 1360,132 1440,128 L1440,220 Z" fill="#163d5e" opacity="0.9"/>
+    <path d="M0,220 L0,178 C60,174 80,165 100,168 C120,171 130,176 150,172 C165,169 172,162 188,165 C204,168 210,175 228,171 C244,167 252,158 270,162 C288,166 294,174 314,170 C332,166 340,156 360,160 C378,164 386,172 406,168 C424,164 432,154 452,158 C470,162 478,170 498,166 C516,162 524,152 544,156 C562,160 570,168 590,164 C608,160 618,150 638,154 C658,158 666,168 686,164 C704,160 712,150 732,154 C752,158 760,166 780,162 C798,158 808,148 828,152 C848,156 856,166 876,162 C894,158 904,148 924,152 C944,156 952,166 972,162 C990,158 1000,148 1020,152 C1040,156 1048,166 1068,162 C1086,158 1096,148 1116,152 C1136,156 1144,166 1164,162 C1182,158 1192,148 1212,152 C1232,156 1240,166 1260,162 C1278,158 1290,150 1310,154 C1330,158 1338,168 1358,164 C1376,160 1400,154 1440,156 L1440,220 Z" fill="url(#treeLine)"/>
+  </svg>
+  <div class="wnc-strip-overlay"></div>
+  <div class="wnc-strip-text">
+    <p>Proudly serving Western North Carolina</p>
+    <span>Asheville &nbsp;·&nbsp; Weaverville &nbsp;·&nbsp; Black Mountain &nbsp;·&nbsp; Brevard &nbsp;·&nbsp; Boone</span>
+  </div>
+</div>
+
 <!-- SERVICES -->
 <section class="section" id="services">
   <div class="section-label">What we do</div>
@@ -399,6 +484,31 @@
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<div class="hiw-section">
+  <div class="hiw-inner">
+    <div class="section-label">How it works</div>
+    <h2>From first conversation to real results —<br>here's what to expect</h2>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <div class="hiw-title">Free AI Readiness Audit</div>
+        <div class="hiw-desc">We spend an hour walking through how your business currently runs — what's taking too long, what's unclear, and where data could help most. No tech knowledge required.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <div class="hiw-title">We build your solution</div>
+        <div class="hiw-desc">Based on the audit, we design and build the right tools for your business — a dashboard, an AI assistant, an automated workflow, or a combination. Clear timeline, clear cost.</div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <div class="hiw-title">You see real results</div>
+        <div class="hiw-desc">We hand everything off with plain-English training so your team can actually use it. Then we're available for support as your business grows and your needs evolve.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <hr>
 
 <!-- ABOUT -->
@@ -414,6 +524,70 @@
     </div>
   </div>
 </section>
+
+<!-- BEFORE / AFTER -->
+<div class="ba-section">
+  <!-- Topographic pattern background -->
+  <svg class="ba-topo" viewBox="0 0 860 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <!-- Large concentric rings — left cluster -->
+    <ellipse cx="160" cy="260" rx="148" ry="92" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="160" cy="260" rx="118" ry="72" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="160" cy="260" rx="90" ry="54" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="160" cy="260" rx="64" ry="38" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="160" cy="260" rx="40" ry="24" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="160" cy="260" rx="20" ry="12" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <!-- Large concentric rings — right cluster -->
+    <ellipse cx="700" cy="200" rx="165" ry="105" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="700" cy="200" rx="132" ry="82" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="700" cy="200" rx="100" ry="62" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="700" cy="200" rx="72" ry="44" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="700" cy="200" rx="46" ry="28" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <ellipse cx="700" cy="200" rx="24" ry="14" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+    <!-- Smaller cluster — top center -->
+    <ellipse cx="440" cy="80" rx="90" ry="56" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <ellipse cx="440" cy="80" rx="66" ry="40" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <ellipse cx="440" cy="80" rx="44" ry="26" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <ellipse cx="440" cy="80" rx="24" ry="14" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <!-- Smaller cluster — bottom right -->
+    <ellipse cx="780" cy="430" rx="110" ry="68" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <ellipse cx="780" cy="430" rx="80" ry="50" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <ellipse cx="780" cy="430" rx="52" ry="32" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <ellipse cx="780" cy="430" rx="28" ry="17" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <!-- Tiny accent — bottom left -->
+    <ellipse cx="60" cy="440" rx="60" ry="38" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <ellipse cx="60" cy="440" rx="38" ry="24" stroke="#185FA5" stroke-width="1" fill="none"/>
+    <ellipse cx="60" cy="440" rx="20" ry="12" stroke="#185FA5" stroke-width="1" fill="none"/>
+  </svg>
+  <div class="ba-inner">
+    <div class="section-label">The difference</div>
+    <h2>What changes when your business<br>runs on data</h2>
+    <p class="ba-subtitle">You don't need to overhaul everything. A few targeted tools in the right places can transform how clearly you see your business — and how confidently you make decisions.</p>
+    <div class="ba-grid">
+      <div class="ba-col ba-col-before">
+        <div class="ba-col-label">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+          Without BRI
+        </div>
+        <div class="ba-item"><div class="ba-dot">✕</div><div class="ba-item-text">Hours each week manually pulling reports from spreadsheets</div></div>
+        <div class="ba-item"><div class="ba-dot">✕</div><div class="ba-item-text">Guessing which products, services, or customers are most profitable</div></div>
+        <div class="ba-item"><div class="ba-dot">✕</div><div class="ba-item-text">Answering the same customer questions over and over by hand</div></div>
+        <div class="ba-item"><div class="ba-dot">✕</div><div class="ba-item-text">Making big decisions based on gut feel because the data is too hard to access</div></div>
+        <div class="ba-item"><div class="ba-dot">✕</div><div class="ba-item-text">Feeling like AI is for big companies — not for a business like yours</div></div>
+      </div>
+      <div class="ba-col ba-col-after">
+        <div class="ba-col-label">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#85B7EB" stroke-width="1.5" stroke-linecap="round"><path d="M3 8l3.5 3.5L13 4"/></svg>
+          With BRI
+        </div>
+        <div class="ba-item"><div class="ba-dot">✓</div><div class="ba-item-text"><strong>Live dashboards</strong> show you what's happening the moment you log in</div></div>
+        <div class="ba-item"><div class="ba-dot">✓</div><div class="ba-item-text"><strong>Clear answers</strong> on what's working and what to focus on next</div></div>
+        <div class="ba-item"><div class="ba-dot">✓</div><div class="ba-item-text"><strong>AI tools</strong> handle repetitive tasks and customer questions 24/7</div></div>
+        <div class="ba-item"><div class="ba-dot">✓</div><div class="ba-item-text"><strong>Confident decisions</strong> backed by your own real business data</div></div>
+        <div class="ba-item"><div class="ba-dot">✓</div><div class="ba-item-text"><strong>Practical AI</strong> built specifically for your team, your tools, your workflow</div></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <hr>
 
