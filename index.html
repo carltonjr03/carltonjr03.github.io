@@ -135,19 +135,23 @@
   #services-page.active { display: block; }
   #main-page.hidden { display: none; }
 
-  /* Frames strip */
-  .frames-wrap { background: #B5D4F4; padding: 56px 0; }
+  /* Topo pattern background for use case library */
+  .uc-bg-wrap { position: relative; overflow: hidden; background: #fafaf8; }
+  .uc-net-bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.1; pointer-events: none; }
+  .uc-section { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 8px 48px 72px; }
+  .frames-wrap { background: #185FA5; padding: 56px 0; }
   .frames-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-  .frames-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #378ADD; margin-bottom: 28px; }
+  .frames-label { font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #1c1c1e; margin-bottom: 28px; }
   .frames-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-  .frame-card { background: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.7); border-radius: 12px; padding: 28px 22px; position: relative; overflow: hidden; transition: background .2s; }
-  .frame-card:hover { background: rgba(255,255,255,0.65); }
+  .frame-card { background: rgba(255,255,255,0.65); border: 1px solid rgba(255,255,255,0.85); border-radius: 12px; padding: 28px 22px; position: relative; overflow: hidden; }
   .frame-num { font-size: 38px; font-weight: 700; font-style: italic; color: rgba(12,68,124,0.1); position: absolute; top: 12px; right: 16px; line-height: 1; }
   .frame-title { font-size: 14px; font-weight: 600; color: #0C447C; margin-bottom: 10px; }
   .frame-quote { font-size: 12.5px; color: #185FA5; line-height: 1.65; font-style: italic; }
 
-  /* Services intro */
-  .svc-intro { max-width: 860px; margin: 0 auto; padding: 64px 48px 48px; }
+  /* Services intro hero — matches homepage hero */
+  .svc-intro-outer { position: relative; overflow: hidden; background: #eef5fb; }
+  .svc-intro-mountains { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; display: block; width: 100%; height: 50%; }
+  .svc-intro { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; padding: 64px 48px 120px; }
   .svc-intro-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #185FA5; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
   .svc-intro-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: #185FA5; }
   .svc-intro h2 { font-size: 36px; font-weight: 600; color: #1c1c1e; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
@@ -155,7 +159,7 @@
   .svc-intro p { font-size: 16px; color: #48484a; line-height: 1.8; max-width: 560px; }
 
   /* Use case section */
-  .uc-section { max-width: 860px; margin: 0 auto; padding: 8px 48px 72px; }
+  /* Use case section — layout handled by .uc-bg-wrap above */
   .uc-hdr { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 16px; }
   .uc-hdr-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #185FA5; margin-bottom: 8px; }
   .uc-hdr-title { font-size: 22px; font-weight: 600; color: #1c1c1e; }
@@ -206,7 +210,7 @@
   }
 
   /* WNC NIGHT SKY STRIP */
-  .wnc-strip { position: relative; width: 100%; height: 220px; overflow: hidden; background: #1a3a5c; }
+  .wnc-strip { position: relative; width: 100%; height: 160px; overflow: hidden; background: #1a3a5c; }
   .wnc-strip-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
   .wnc-strip-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(12,68,124,0.55) 0%, rgba(24,95,165,0.3) 50%, rgba(12,68,124,0.55) 100%); }
   .wnc-strip-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
@@ -268,7 +272,7 @@
     .hiw-inner { padding: 48px 20px; }
     .ba-grid { grid-template-columns: 1fr; }
     .ba-inner { padding: 48px 20px; }
-    .wnc-strip { height: 160px; }
+    .wnc-strip { height: 120px; }
     .wnc-strip-text p { font-size: 15px; padding: 0 20px; }
   }
 </style>
@@ -511,20 +515,6 @@
 
 <hr>
 
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="section-label">About</div>
-  <h2>A neighbor who happens to know<br>a lot about data</h2>
-  <div class="about-wrap">
-    <div class="about-avatar">JC</div>
-    <div class="about-text">
-      <div class="about-name">Jono Carlton</div>
-      <div class="about-role">Founder, Blue Ridge Intelligence · M.S. Data Science</div>
-      <p class="about-body">I'm a data scientist and analytics leader with experience building scalable data systems, deploying machine learning models, and leading cross-functional teams right here in WNC. I've built dashboards, deployed AI-powered tools, and translated complex data into decisions that actually matter.<br><br>I started Blue Ridge Intelligence because I kept seeing local businesses struggle with problems I knew how to solve. You shouldn't need a Fortune 500 budget to run a smarter business. If you're in Asheville, Weaverville, Black Mountain, Brevard, or anywhere in the greater WNC area, I'd love to sit down with you and figure out what's possible.</p>
-    </div>
-  </div>
-</section>
-
 <!-- BEFORE / AFTER -->
 <div class="ba-section">
   <!-- Topographic pattern background -->
@@ -566,7 +556,7 @@
       <div class="ba-col ba-col-before">
         <div class="ba-col-label">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg>
-          Without BRI
+          Without Blue Ridge Intelligence
         </div>
         <div class="ba-item"><div class="ba-dot">✕</div><div class="ba-item-text">Hours each week manually pulling reports from spreadsheets</div></div>
         <div class="ba-item"><div class="ba-dot">✕</div><div class="ba-item-text">Guessing which products, services, or customers are most profitable</div></div>
@@ -577,7 +567,7 @@
       <div class="ba-col ba-col-after">
         <div class="ba-col-label">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#85B7EB" stroke-width="1.5" stroke-linecap="round"><path d="M3 8l3.5 3.5L13 4"/></svg>
-          With BRI
+          With Blue Ridge Intelligence
         </div>
         <div class="ba-item"><div class="ba-dot">✓</div><div class="ba-item-text"><strong>Live dashboards</strong> show you what's happening the moment you log in</div></div>
         <div class="ba-item"><div class="ba-dot">✓</div><div class="ba-item-text"><strong>Clear answers</strong> on what's working and what to focus on next</div></div>
@@ -591,7 +581,22 @@
 
 <hr>
 
-<!-- AUDIT CTA -->
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-label">About</div>
+  <h2>A neighbor who happens to know<br>a lot about data</h2>
+  <div class="about-wrap">
+    <div class="about-avatar">JC</div>
+    <div class="about-text">
+      <div class="about-name">Jonathan R. Carlton</div>
+      <div class="about-role">Founder, Blue Ridge Intelligence · M.S. Data Science</div>
+      <p class="about-body">I'm a data scientist and analytics leader with experience building scalable data systems, deploying machine learning models, and leading cross-functional teams right here in WNC. I've built dashboards, deployed AI-powered tools, and translated complex data into decisions that actually matter.<br><br>I started Blue Ridge Intelligence because I kept seeing local businesses struggle with problems I knew how to solve. You shouldn't need a Fortune 500 budget to run a smarter business. If you're in Asheville, Weaverville, Black Mountain, Brevard, or anywhere in the greater WNC area, I'd love to sit down with you and figure out what's possible.</p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
 <div class="audit-section" id="audit">
   <div class="audit-inner">
     <h2>Not sure where to start?<br>Let's figure it out together — for free.</h2>
@@ -647,10 +652,65 @@
   </button>
 
   <!-- Intro -->
+  <div class="svc-intro-outer">
   <div class="svc-intro">
     <div class="svc-intro-eyebrow">Real results for WNC businesses</div>
     <h2>What could your business do<br>with <em>a few smarter tools?</em></h2>
     <p>We don't sell technology — we solve business problems. Browse by industry to see exactly what we've built for businesses like yours, what it changed for them, and what it costs.</p>
+  </div>
+  <svg class="svc-intro-mountains" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="
+      M0,200 L0,105
+      C80,105 120,52 200,38
+      C280,24 310,60 380,58
+      C450,56 500,10 580,8
+      C660,6 700,45 780,48
+      C860,51 920,20 1020,14
+      C1120,8 1160,50 1240,52
+      C1320,54 1380,30 1440,28
+      L1440,200 Z
+    " fill="#C8DCF0" opacity="0.38"/>
+    <path d="
+      M0,200 L0,130
+      C60,130 90,88 160,78
+      C230,68 265,100 320,98
+      C375,96 410,62 480,55
+      C550,48 580,82 650,85
+      C720,88 760,55 840,44
+      C920,33 955,75 1020,78
+      C1085,81 1120,52 1190,48
+      C1260,44 1300,80 1370,82
+      C1410,83 1430,70 1440,68
+      L1440,200 Z
+    " fill="#B5D4F4" opacity="0.42"/>
+    <path d="
+      M0,200 L0,152
+      C70,152 110,118 180,112
+      C250,106 285,132 350,130
+      C415,128 460,100 540,94
+      C620,88 660,120 740,124
+      C820,128 870,104 960,98
+      C1050,92 1090,126 1160,128
+      C1230,130 1280,108 1360,106
+      C1400,105 1425,118 1440,116
+      L1440,200 Z
+    " fill="#85B7EB" opacity="0.35"/>
+    <path d="
+      M0,200 L0,168
+      C120,168 180,150 320,148
+      C460,146 500,162 640,160
+      C780,158 840,142 1000,144
+      C1160,146 1240,162 1360,160
+      C1400,159 1425,162 1440,160
+      L1440,200 Z
+    " fill="#deedf8" opacity="0.6"/>
+    <path d="
+      M0,200 L0,186
+      C360,186 360,180 720,182
+      C1080,184 1080,179 1440,181
+      L1440,200 Z
+    " fill="#cde7f6" opacity="0.72"/>
+  </svg>
   </div>
 
   <!-- Value frames -->
@@ -683,7 +743,40 @@
   </div>
 
   <!-- Use case library -->
-  <div class="uc-section">
+  <div class="uc-bg-wrap">
+    <svg class="uc-net-bg" viewBox="0 0 900 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <!-- Left cluster -->
+      <ellipse cx="80" cy="400" rx="170" ry="106" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="80" cy="400" rx="136" ry="84" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="80" cy="400" rx="104" ry="64" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="80" cy="400" rx="74" ry="46" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="80" cy="400" rx="46" ry="28" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="80" cy="400" rx="22" ry="14" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <!-- Top right cluster -->
+      <ellipse cx="780" cy="140" rx="190" ry="118" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="780" cy="140" rx="152" ry="94" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="780" cy="140" rx="116" ry="72" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="780" cy="140" rx="82" ry="50" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="780" cy="140" rx="52" ry="32" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <ellipse cx="780" cy="140" rx="26" ry="16" stroke="#185FA5" stroke-width="1.2" fill="none"/>
+      <!-- Center bottom cluster -->
+      <ellipse cx="450" cy="720" rx="155" ry="96" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="450" cy="720" rx="120" ry="74" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="450" cy="720" rx="86" ry="54" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="450" cy="720" rx="56" ry="34" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="450" cy="720" rx="30" ry="18" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <!-- Small top-left accent -->
+      <ellipse cx="270" cy="70" rx="90" ry="56" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="270" cy="70" rx="64" ry="40" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="270" cy="70" rx="40" ry="25" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="270" cy="70" rx="20" ry="12" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <!-- Small right-mid accent -->
+      <ellipse cx="870" cy="520" rx="100" ry="62" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="870" cy="520" rx="72" ry="44" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="870" cy="520" rx="46" ry="28" stroke="#185FA5" stroke-width="1" fill="none"/>
+      <ellipse cx="870" cy="520" rx="24" ry="15" stroke="#185FA5" stroke-width="1" fill="none"/>
+    </svg>
+    <div class="uc-section">
     <div class="uc-hdr">
       <div>
         <div class="uc-hdr-label">Use case library</div>
@@ -846,6 +939,7 @@
 
     </div><!-- end uc-grid -->
   </div><!-- end uc-section -->
+  </div><!-- end uc-bg-wrap -->
 
   <!-- CTA strip -->
   <div class="audit-section">
