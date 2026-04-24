@@ -1202,14 +1202,26 @@
   // ─── Services-page quiz ───
   const sAnswers = { industry:null, pain:null, team:null, tools:[], budget:null };
 
+  // Hide Next buttons on single-answer steps (0,1,2,4) — they auto-advance
+  [0,1,2,4].forEach(i => {
+    const btn = document.getElementById('snext' + i);
+    if (btn) btn.style.display = 'none';
+  });
+
   document.querySelectorAll('.quiz-opt.s-opt:not(.multi)').forEach(opt => {
     opt.addEventListener('click', () => {
       const step = opt.closest('.quiz-step');
       step.querySelectorAll('.quiz-opt.s-opt:not(.multi)').forEach(o => o.classList.remove('selected'));
       opt.classList.add('selected');
       const stepIndex = parseInt(step.id.replace('sstep',''));
-      const nextBtn = document.getElementById('snext' + stepIndex);
-      if (nextBtn) nextBtn.disabled = false;
+      // Brief pause so the selection highlight is visible, then auto-advance
+      setTimeout(() => {
+        if (stepIndex === 4) {
+          sShowResult();
+        } else {
+          sNextStep(stepIndex);
+        }
+      }, 320);
     });
   });
 
@@ -1269,7 +1281,11 @@
     document.getElementById('sQuizResult').classList.remove('active');
     document.querySelectorAll('#services-quiz .quiz-step').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('#services-quiz .quiz-opt').forEach(o => o.classList.remove('selected'));
-    document.querySelectorAll('#services-quiz .quiz-next').forEach(b => { if (b.id !== 'snext3') b.disabled = true; });
+    // Re-hide auto-advance Next buttons; keep step 3 (tools) Next visible
+    [0,1,2,4].forEach(i => {
+      const btn = document.getElementById('snext' + i);
+      if (btn) btn.style.display = 'none';
+    });
     document.getElementById('sstep0').classList.add('active');
     sUpdatePips(0);
   };
