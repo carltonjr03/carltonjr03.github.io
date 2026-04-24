@@ -256,6 +256,55 @@
   .ba-col-after .ba-item-text { color: #deedf8; }
   .ba-col-after .ba-item-text strong { color: #fff; display: block; }
 
+  /* QUIZ SECTION */
+  .quiz-section { background: #0C447C; }
+  .quiz-inner { max-width: 720px; margin: 0 auto; padding: 64px 40px; }
+  .quiz-inner .section-label { color: #85B7EB; margin-bottom: 8px; }
+  .quiz-inner h2 { font-size: 26px; font-weight: 600; color: #fff; margin-bottom: 10px; letter-spacing: -0.01em; line-height: 1.3; }
+  .quiz-intro { font-size: 15px; color: #B5D4F4; line-height: 1.7; margin-bottom: 36px; }
+  .quiz-step { display: none; }
+  .quiz-step.active { display: block; }
+  .quiz-q { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 20px; line-height: 1.4; }
+  .quiz-q span { font-size: 12px; font-weight: 400; color: #85B7EB; display: block; margin-top: 4px; letter-spacing: 0.03em; }
+  .quiz-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .quiz-opt { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 14px 18px; font-size: 14px; color: #deedf8; cursor: pointer; transition: all .15s; text-align: left; display: flex; align-items: center; gap: 12px; }
+  .quiz-opt:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.35); }
+  .quiz-opt.selected { background: #185FA5; border-color: #378ADD; color: #fff; }
+  .quiz-opt-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; }
+  .quiz-opt-text { flex: 1; }
+  .quiz-opt-label { font-weight: 500; display: block; }
+  .quiz-opt-sub { font-size: 12px; color: #85B7EB; margin-top: 2px; display: block; }
+  .quiz-opt.selected .quiz-opt-sub { color: #B5D4F4; }
+  .quiz-progress { display: flex; gap: 6px; margin-bottom: 32px; }
+  .quiz-pip { height: 3px; border-radius: 99px; flex: 1; background: rgba(255,255,255,0.15); transition: background .3s; }
+  .quiz-pip.done { background: #378ADD; }
+  .quiz-pip.active { background: #fff; }
+  .quiz-nav { display: flex; align-items: center; justify-content: space-between; }
+  .quiz-back { font-size: 13px; color: #85B7EB; background: none; border: none; cursor: pointer; padding: 0; }
+  .quiz-back:hover { color: #fff; }
+  .quiz-next { font-size: 14px; font-weight: 600; padding: 12px 28px; border-radius: 9px; background: #fff; color: #0C447C; border: none; cursor: pointer; transition: background .15s; }
+  .quiz-next:hover { background: #deedf8; }
+  .quiz-next:disabled { opacity: 0.35; cursor: not-allowed; }
+  .quiz-result { display: none; }
+  .quiz-result.active { display: block; }
+  .quiz-result-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 99px; padding: 6px 16px; font-size: 12px; font-weight: 600; color: #85B7EB; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+  .quiz-result-frame { font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+  .quiz-result-desc { font-size: 15px; color: #B5D4F4; line-height: 1.7; margin-bottom: 24px; }
+  .quiz-result-usecases { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 20px; margin-bottom: 28px; }
+  .quiz-result-usecases-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #85B7EB; margin-bottom: 14px; }
+  .quiz-result-uc { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-top: 0.5px solid rgba(255,255,255,0.08); }
+  .quiz-result-uc:first-of-type { border-top: none; }
+  .quiz-result-uc-dot { width: 6px; height: 6px; border-radius: 50%; background: #378ADD; flex-shrink: 0; margin-top: 6px; }
+  .quiz-result-uc-text { font-size: 13px; color: #deedf8; line-height: 1.5; }
+  .quiz-result-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .quiz-result-primary { font-size: 14px; font-weight: 600; padding: 13px 24px; border-radius: 9px; background: #fff; color: #0C447C; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+  .quiz-result-primary:hover { background: #deedf8; }
+  .quiz-result-secondary { font-size: 14px; font-weight: 500; padding: 13px 24px; border-radius: 9px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); cursor: pointer; text-decoration: none; display: inline-block; }
+  .quiz-result-secondary:hover { background: rgba(255,255,255,0.08); }
+  .quiz-restart { font-size: 12px; color: #85B7EB; background: none; border: none; cursor: pointer; margin-top: 16px; display: block; }
+  .quiz-restart:hover { color: #fff; }
+  @media (max-width: 600px) { .quiz-inner { padding: 48px 20px; } .quiz-result-btns { flex-direction: column; } }
+
   @media (max-width: 600px) {
     nav { padding: 14px 20px; }
     .nav-links { display: none; }
@@ -312,22 +361,25 @@
         <a href="#" onclick="showServicesPage(); return false;" class="dropdown-featured" role="menuitem">What We Can Do For You</a>
         <div class="nav-dropdown-divider"></div>
         <a href="#" onclick="goHome('services'); return false;" role="menuitem">Overview</a>
+        <a href="#" onclick="goServicesAndQuiz(); return false;" role="menuitem">Your Business, Smarter — take the quiz</a>
         <a href="#" onclick="goHome('audit'); return false;" role="menuitem">Free AI Audit</a>
       </div>
     </div>
     <a href="#" onclick="goHome('about'); return false;">About</a>
     <a href="#" onclick="goHome('faq'); return false;">FAQ</a>
+    <a href="#" onclick="goServicesAndQuiz(); return false;" style="color:#185FA5;font-weight:500;">Your Business, Smarter — take the quiz</a>
   </div>
-  <a href="#" onclick="goHome('audit'); return false;" class="nav-cta">Book a free audit</a>
+  <a href="#" onclick="goHome('audit'); return false;" class="nav-cta">Book your free Business Intelligence Audit</a>
   <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
   <div class="mobile-nav-drawer" id="mobileMenu">
     <a href="#" onclick="showServicesPage(); closeMobileMenu(); return false;" class="mobile-link" style="color:#185FA5;font-weight:600;">What We Can Do For You</a>
+    <a href="#" onclick="goServicesAndQuiz(); closeMobileMenu(); return false;" class="mobile-link">Your Business, Smarter — take the quiz</a>
     <a href="#" onclick="goHome('services'); closeMobileMenu(); return false;" class="mobile-link">Services Overview</a>
     <a href="#" onclick="goHome('about'); closeMobileMenu(); return false;" class="mobile-link">About</a>
     <a href="#" onclick="goHome('faq'); closeMobileMenu(); return false;" class="mobile-link">FAQ</a>
-    <a href="#" onclick="goHome('audit'); closeMobileMenu(); return false;" class="mobile-cta">Book a free audit</a>
+    <a href="#" onclick="goHome('audit'); closeMobileMenu(); return false;" class="mobile-cta">Book your free Business Intelligence Audit</a>
   </div>
 </nav>
 
@@ -340,8 +392,11 @@
   <h1>Your business runs on gut feel.<br>Imagine what it could do with data.</h1>
   <p class="hero-sub">Blue Ridge Intelligence helps Western North Carolina small businesses put AI and data to work — without the big-firm price tag or the confusing tech-speak. Just clear, practical tools that make your day easier and your decisions smarter.</p>
   <div class="hero-btns">
-    <a href="#audit" class="btn-primary">Book your free audit</a>
+    <a href="#audit" class="btn-primary">Book your free Business Intelligence Audit</a>
     <a href="#" onclick="showServicesPage(); return false;" class="btn-ghost">See what we do &rarr;</a>
+  </div>
+  <div style="margin-top:14px;">
+    <a href="#" onclick="goServicesAndQuiz(); return false;" style="font-size:14px;font-weight:500;padding:13px 24px;border-radius:9px;background:transparent;border:1.5px solid #185FA5;color:#185FA5;text-decoration:none;display:inline-block;">Your Business, Smarter — take the quiz →</a>
   </div>
 </section>
 
@@ -604,7 +659,10 @@
   <div class="audit-inner">
     <h2>Not sure where to start?<br>Let's figure it out together — for free.</h2>
     <p class="audit-sub">Book a no-pressure, 1-hour AI Readiness Audit. We'll look at how your business currently runs, identify where AI and data tools could save you the most time and money, and leave you with a clear picture of your options — whether you hire us or not.</p>
-    <a href="mailto:hello@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free audit</a>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;">
+      <a href="mailto:hello@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free Business Intelligence Audit</a>
+      <a href="#" onclick="goServicesAndQuiz();return false;" style="font-size:14px;font-weight:500;padding:13px 24px;border-radius:9px;background:transparent;border:1.5px solid #185FA5;color:#185FA5;text-decoration:none;display:inline-block;">Your Business, Smarter — take the quiz →</a>
+    </div>
     <p class="audit-fine">No cost. No commitment. Just a conversation.</p>
   </div>
 </div>
@@ -944,12 +1002,103 @@
   </div><!-- end uc-section -->
   </div><!-- end uc-bg-wrap -->
 
+  <!-- Quiz on services page -->
+  <div class="quiz-section" id="services-quiz">
+    <div class="quiz-inner">
+      <div class="section-label">Your Business, Smarter</div>
+      <h2>Your Business, Smarter — Where to Start</h2>
+      <p class="quiz-intro">Answer 5 quick questions and we'll show you exactly which tools are most likely to help your business run smarter — no tech knowledge needed.</p>
+
+      <div class="quiz-progress">
+        <div class="quiz-pip active" id="spip0"></div>
+        <div class="quiz-pip" id="spip1"></div>
+        <div class="quiz-pip" id="spip2"></div>
+        <div class="quiz-pip" id="spip3"></div>
+        <div class="quiz-pip" id="spip4"></div>
+      </div>
+
+      <div class="quiz-step active" id="sstep0">
+        <div class="quiz-q">What type of business do you run?<span>Pick the one that fits best</span></div>
+        <div class="quiz-options">
+          <div class="quiz-opt s-opt" data-val="hospitality"><div class="quiz-opt-icon">🍽️</div><div class="quiz-opt-text"><span class="quiz-opt-label">Restaurant, café, or brewery</span><span class="quiz-opt-sub">Food & beverage, hospitality</span></div></div>
+          <div class="quiz-opt s-opt" data-val="healthcare"><div class="quiz-opt-icon">🏥</div><div class="quiz-opt-text"><span class="quiz-opt-label">Healthcare or wellness practice</span><span class="quiz-opt-sub">Medical, dental, therapy, fitness</span></div></div>
+          <div class="quiz-opt s-opt" data-val="retail"><div class="quiz-opt-icon">🛍️</div><div class="quiz-opt-text"><span class="quiz-opt-label">Retail or e-commerce</span><span class="quiz-opt-sub">Physical store or online shop</span></div></div>
+          <div class="quiz-opt s-opt" data-val="contractor"><div class="quiz-opt-icon">🔨</div><div class="quiz-opt-text"><span class="quiz-opt-label">Contractor or trades</span><span class="quiz-opt-sub">Construction, HVAC, electrical, landscaping</span></div></div>
+          <div class="quiz-opt s-opt" data-val="professional"><div class="quiz-opt-icon">💼</div><div class="quiz-opt-text"><span class="quiz-opt-label">Professional services</span><span class="quiz-opt-sub">Accounting, legal, real estate, consulting</span></div></div>
+          <div class="quiz-opt s-opt" data-val="other"><div class="quiz-opt-icon">📦</div><div class="quiz-opt-text"><span class="quiz-opt-label">Something else</span><span class="quiz-opt-sub">Any other WNC business</span></div></div>
+        </div>
+        <div class="quiz-nav"><span></span><button class="quiz-next" id="snext0" disabled onclick="sNextStep(0)">Next →</button></div>
+      </div>
+
+      <div class="quiz-step" id="sstep1">
+        <div class="quiz-q">What's eating most of your time right now?<span>Pick your biggest frustration</span></div>
+        <div class="quiz-options">
+          <div class="quiz-opt s-opt" data-val="reporting"><div class="quiz-opt-icon">📊</div><div class="quiz-opt-text"><span class="quiz-opt-label">Manual reporting & spreadsheets</span><span class="quiz-opt-sub">Pulling numbers together takes hours every week</span></div></div>
+          <div class="quiz-opt s-opt" data-val="customers"><div class="quiz-opt-icon">💬</div><div class="quiz-opt-text"><span class="quiz-opt-label">Answering the same customer questions</span><span class="quiz-opt-sub">Calls, emails, texts — same questions every day</span></div></div>
+          <div class="quiz-opt s-opt" data-val="scheduling"><div class="quiz-opt-icon">📅</div><div class="quiz-opt-text"><span class="quiz-opt-label">Scheduling & coordination</span><span class="quiz-opt-sub">Booking, rescheduling, reminders take too long</span></div></div>
+          <div class="quiz-opt s-opt" data-val="visibility"><div class="quiz-opt-icon">🔍</div><div class="quiz-opt-text"><span class="quiz-opt-label">Not knowing what's actually profitable</span><span class="quiz-opt-sub">Hard to see which products, services or customers drive margin</span></div></div>
+          <div class="quiz-opt s-opt" data-val="documents"><div class="quiz-opt-icon">📄</div><div class="quiz-opt-text"><span class="quiz-opt-label">Creating proposals, estimates or documents</span><span class="quiz-opt-sub">Writing them up takes way longer than it should</span></div></div>
+        </div>
+        <div class="quiz-nav"><button class="quiz-back" onclick="sPrevStep(1)">← Back</button><button class="quiz-next" id="snext1" disabled onclick="sNextStep(1)">Next →</button></div>
+      </div>
+
+      <div class="quiz-step" id="sstep2">
+        <div class="quiz-q">How many people work in your business?<span>Including yourself</span></div>
+        <div class="quiz-options">
+          <div class="quiz-opt s-opt" data-val="solo"><div class="quiz-opt-icon">👤</div><div class="quiz-opt-text"><span class="quiz-opt-label">Just me</span><span class="quiz-opt-sub">Solo operator</span></div></div>
+          <div class="quiz-opt s-opt" data-val="small"><div class="quiz-opt-icon">👥</div><div class="quiz-opt-text"><span class="quiz-opt-label">2–10 people</span><span class="quiz-opt-sub">Small team</span></div></div>
+          <div class="quiz-opt s-opt" data-val="medium"><div class="quiz-opt-icon">🏢</div><div class="quiz-opt-text"><span class="quiz-opt-label">11–50 people</span><span class="quiz-opt-sub">Mid-size team</span></div></div>
+          <div class="quiz-opt s-opt" data-val="large"><div class="quiz-opt-icon">🏭</div><div class="quiz-opt-text"><span class="quiz-opt-label">50+ people</span><span class="quiz-opt-sub">Larger organization</span></div></div>
+        </div>
+        <div class="quiz-nav"><button class="quiz-back" onclick="sPrevStep(2)">← Back</button><button class="quiz-next" id="snext2" disabled onclick="sNextStep(2)">Next →</button></div>
+      </div>
+
+      <div class="quiz-step" id="sstep3">
+        <div class="quiz-q">What tools do you currently use?<span>Pick all that apply — click Next when done</span></div>
+        <div class="quiz-options" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="quiz-opt multi s-opt" data-val="spreadsheets"><div class="quiz-opt-icon">📋</div><div class="quiz-opt-text"><span class="quiz-opt-label">Excel / Google Sheets</span></div></div>
+          <div class="quiz-opt multi s-opt" data-val="pos"><div class="quiz-opt-icon">💳</div><div class="quiz-opt-text"><span class="quiz-opt-label">POS system</span></div></div>
+          <div class="quiz-opt multi s-opt" data-val="crm"><div class="quiz-opt-icon">📇</div><div class="quiz-opt-text"><span class="quiz-opt-label">CRM / Salesforce</span></div></div>
+          <div class="quiz-opt multi s-opt" data-val="email"><div class="quiz-opt-icon">📧</div><div class="quiz-opt-text"><span class="quiz-opt-label">Email marketing</span></div></div>
+          <div class="quiz-opt multi s-opt" data-val="scheduling"><div class="quiz-opt-icon">🗓️</div><div class="quiz-opt-text"><span class="quiz-opt-label">Scheduling software</span></div></div>
+          <div class="quiz-opt multi s-opt" data-val="nothing"><div class="quiz-opt-icon">🤷</div><div class="quiz-opt-text"><span class="quiz-opt-label">Mostly manual / paper</span></div></div>
+        </div>
+        <div class="quiz-nav" style="margin-top:20px;"><button class="quiz-back" onclick="sPrevStep(3)">← Back</button><button class="quiz-next" id="snext3" onclick="sNextStep(3)">Next →</button></div>
+      </div>
+
+      <div class="quiz-step" id="sstep4">
+        <div class="quiz-q">What kind of investment feels right to get started?<span>There's no wrong answer — just helps us point you to the right solution</span></div>
+        <div class="quiz-options">
+          <div class="quiz-opt s-opt" data-val="small"><div class="quiz-opt-icon">💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">Under $1,000</span><span class="quiz-opt-sub">Looking for a focused, high-impact fix</span></div></div>
+          <div class="quiz-opt s-opt" data-val="medium"><div class="quiz-opt-icon">💵💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">$1,000–$3,000</span><span class="quiz-opt-sub">Ready to invest in something more complete</span></div></div>
+          <div class="quiz-opt s-opt" data-val="large"><div class="quiz-opt-icon">💵💵💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">$3,000+</span><span class="quiz-opt-sub">Looking for a comprehensive solution</span></div></div>
+          <div class="quiz-opt s-opt" data-val="unsure"><div class="quiz-opt-icon">🤔</div><div class="quiz-opt-text"><span class="quiz-opt-label">Not sure yet</span><span class="quiz-opt-sub">I want to understand what's possible first</span></div></div>
+        </div>
+        <div class="quiz-nav"><button class="quiz-back" onclick="sPrevStep(4)">← Back</button><button class="quiz-next" id="snext4" disabled onclick="sShowResult()">See my results →</button></div>
+      </div>
+
+      <div class="quiz-result" id="sQuizResult">
+        <div class="quiz-result-badge">Your best fit</div>
+        <div class="quiz-result-frame" id="sResultFrame"></div>
+        <div class="quiz-result-desc" id="sResultDesc"></div>
+        <div class="quiz-result-usecases">
+          <div class="quiz-result-usecases-label">Tools most likely to help you</div>
+          <div id="sResultUCs"></div>
+        </div>
+        <div class="quiz-result-btns">
+          <a href="mailto:hello@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="quiz-result-primary">Book your free Business Intelligence Audit</a>
+        </div>
+        <button class="quiz-restart" onclick="sRestartQuiz()">↩ Start over</button>
+      </div>
+    </div>
+  </div>
+
   <!-- CTA strip -->
   <div class="audit-section">
     <div class="audit-inner">
       <h2>Not sure what applies to your business?<br>Let's figure it out — for free.</h2>
       <p class="audit-sub">Book a no-pressure, 1-hour AI Readiness Audit. We'll look at how you currently operate, identify where AI and data tools could save you the most time and money, and leave you with a clear picture — whether you hire us or not.</p>
-      <a href="mailto:hello@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free audit</a>
+      <a href="mailto:hello@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free Business Intelligence Audit</a>
       <p class="audit-fine">No cost. No commitment. Just a conversation.</p>
     </div>
   </div>
@@ -972,10 +1121,11 @@
     menuBtn.classList.toggle('open');
     mobileMenu.classList.toggle('open');
   });
-  function closeMobileMenu() {
+
+  window.closeMobileMenu = function() {
     menuBtn.classList.remove('open');
     mobileMenu.classList.remove('open');
-  }
+  };
 
   // ─── Services dropdown ───
   const navWrap = document.getElementById('navServicesWrap');
@@ -994,23 +1144,17 @@
   const mainPage = document.getElementById('main-page');
   const servicesPage = document.getElementById('services-page');
 
-  function showServicesPage() {
+  window.showServicesPage = function() {
     navWrap.classList.remove('open');
     mainPage.classList.add('hidden');
     servicesPage.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  };
 
-  function goHome(anchor) {
+  window.goHome = function(anchor) {
     navWrap.classList.remove('open');
     servicesPage.classList.remove('active');
     mainPage.classList.remove('hidden');
-    if (anchor) {
-      setTimeout(() => {
-        const el = document.getElementById(anchor);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 50);
-    }
     window.scrollTo({ top: 0, behavior: 'instant' });
     if (anchor) {
       setTimeout(() => {
@@ -1018,7 +1162,15 @@
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 60);
     }
-  }
+  };
+
+  window.goServicesAndQuiz = function() {
+    window.showServicesPage();
+    setTimeout(() => {
+      const q = document.getElementById('services-quiz');
+      if (q) q.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+  };
 
   // ─── Use case filter ───
   document.querySelectorAll('.ftab').forEach(tab => {
@@ -1046,6 +1198,81 @@
       document.getElementById('ucCount').innerHTML = label;
     });
   });
+
+  // ─── Services-page quiz ───
+  const sAnswers = { industry:null, pain:null, team:null, tools:[], budget:null };
+
+  document.querySelectorAll('.quiz-opt.s-opt:not(.multi)').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const step = opt.closest('.quiz-step');
+      step.querySelectorAll('.quiz-opt.s-opt:not(.multi)').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      const stepIndex = parseInt(step.id.replace('sstep',''));
+      const nextBtn = document.getElementById('snext' + stepIndex);
+      if (nextBtn) nextBtn.disabled = false;
+    });
+  });
+
+  document.querySelectorAll('.quiz-opt.multi.s-opt').forEach(opt => {
+    opt.addEventListener('click', () => opt.classList.toggle('selected'));
+  });
+
+  function sUpdatePips(current) {
+    for (let i = 0; i < 5; i++) {
+      const pip = document.getElementById('spip' + i);
+      if (!pip) continue;
+      pip.className = i < current ? 'quiz-pip done' : i === current ? 'quiz-pip active' : 'quiz-pip';
+    }
+  }
+
+  window.sNextStep = function(current) {
+    const step = document.getElementById('sstep' + current);
+    if (current === 0) sAnswers.industry = step.querySelector('.quiz-opt.selected')?.dataset.val;
+    if (current === 1) sAnswers.pain = step.querySelector('.quiz-opt.selected')?.dataset.val;
+    if (current === 2) sAnswers.team = step.querySelector('.quiz-opt.selected')?.dataset.val;
+    if (current === 3) sAnswers.tools = [...step.querySelectorAll('.quiz-opt.selected')].map(o => o.dataset.val);
+    step.classList.remove('active');
+    const next = document.getElementById('sstep' + (current + 1));
+    if (next) { next.classList.add('active'); sUpdatePips(current + 1); }
+  };
+
+  window.sPrevStep = function(current) {
+    document.getElementById('sstep' + current).classList.remove('active');
+    document.getElementById('sstep' + (current - 1)).classList.add('active');
+    sUpdatePips(current - 1);
+  };
+
+  window.sShowResult = function() {
+    const step4 = document.getElementById('sstep4');
+    sAnswers.budget = step4.querySelector('.quiz-opt.selected')?.dataset.val;
+    step4.classList.remove('active');
+    const frames = {
+      reporting:  { frame:'Time Recovery — Automated Reporting', desc:'You\'re spending hours every week on something a dashboard or automated report can handle in minutes. The right setup pulls your numbers together automatically so you can focus on running the business, not tracking it.', ucs:['Weekly auto-generated cost & labor report','Live business performance dashboard','Sales & revenue trend tracker'] },
+      customers:  { frame:'Customer Experience — AI-Powered Responses', desc:'You\'re answering the same questions over and over. A custom AI assistant trained on your business can handle 80%+ of incoming questions automatically — 24/7, no staff needed.', ucs:['Customer FAQ chat assistant','Automated inquiry response system','Review & feedback collector'] },
+      scheduling: { frame:'Time Recovery — Workflow Automation', desc:'Scheduling and coordination are stealing time from the real work. Automating reminders, bookings, and follow-ups can give you hours back every week with very little setup.', ucs:['Automated appointment reminders','Staff scheduling assistant','Follow-up workflow automation'] },
+      visibility: { frame:'Revenue Visibility — Data Dashboard', desc:'You can\'t optimize what you can\'t see. A live dashboard connecting your existing tools will show you exactly which products, services, and customers are driving your margin — in real time.', ucs:['Profit margin by product/service dashboard','Customer lifetime value tracker','Real-time revenue visibility tool'] },
+      documents:  { frame:'Staff Leverage — Document Automation', desc:'Generating proposals, estimates, and documents manually is a time sink. A simple AI-powered tool can take your inputs and output a polished, professional document in minutes.', ucs:['Proposal & estimate generator','Contract template assistant','Automated invoice & follow-up system'] },
+    };
+    const result = frames[sAnswers.pain] || frames['reporting'];
+    document.getElementById('sResultFrame').textContent = result.frame;
+    document.getElementById('sResultDesc').textContent = result.desc;
+    document.getElementById('sResultUCs').innerHTML = result.ucs.map(uc =>
+      `<div class="quiz-result-uc"><div class="quiz-result-uc-dot"></div><div class="quiz-result-uc-text">${uc}</div></div>`
+    ).join('');
+    for (let i = 0; i < 5; i++) { const p = document.getElementById('spip'+i); if(p) p.className='quiz-pip done'; }
+    document.getElementById('sQuizResult').classList.add('active');
+  };
+
+  window.sRestartQuiz = function() {
+    sAnswers.industry = sAnswers.pain = sAnswers.team = sAnswers.budget = null;
+    sAnswers.tools = [];
+    document.getElementById('sQuizResult').classList.remove('active');
+    document.querySelectorAll('#services-quiz .quiz-step').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('#services-quiz .quiz-opt').forEach(o => o.classList.remove('selected'));
+    document.querySelectorAll('#services-quiz .quiz-next').forEach(b => { if (b.id !== 'snext3') b.disabled = true; });
+    document.getElementById('sstep0').classList.add('active');
+    sUpdatePips(0);
+  };
 </script>
 </body>
 </html>
