@@ -303,6 +303,8 @@
   .quiz-result-secondary:hover { background: rgba(255,255,255,0.08); }
   .quiz-restart { font-size: 12px; color: #85B7EB; background: none; border: none; cursor: pointer; margin-top: 16px; display: block; }
   .quiz-restart:hover { color: #fff; }
+  .budget-icon { width: 64px !important; height: 36px !important; border-radius: 10px !important; font-size: 15px !important; letter-spacing: 1px; justify-content: center !important; }
+
   @media (max-width: 600px) { .quiz-inner { padding: 48px 20px; } .quiz-result-btns { flex-direction: column; } }
 
   @media (max-width: 600px) {
@@ -1069,10 +1071,10 @@
       <div class="quiz-step" id="sstep4">
         <div class="quiz-q">What kind of investment feels right to get started?<span>There's no wrong answer — just helps us point you to the right solution</span></div>
         <div class="quiz-options">
-          <div class="quiz-opt s-opt" data-val="small"><div class="quiz-opt-icon">💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">Under $1,000</span><span class="quiz-opt-sub">Looking for a focused, high-impact fix</span></div></div>
-          <div class="quiz-opt s-opt" data-val="medium"><div class="quiz-opt-icon">💵💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">$1,000–$3,000</span><span class="quiz-opt-sub">Ready to invest in something more complete</span></div></div>
-          <div class="quiz-opt s-opt" data-val="large"><div class="quiz-opt-icon">💵💵💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">$3,000+</span><span class="quiz-opt-sub">Looking for a comprehensive solution</span></div></div>
-          <div class="quiz-opt s-opt" data-val="unsure"><div class="quiz-opt-icon">🤔</div><div class="quiz-opt-text"><span class="quiz-opt-label">Not sure yet</span><span class="quiz-opt-sub">I want to understand what's possible first</span></div></div>
+          <div class="quiz-opt s-opt" data-val="small"><div class="quiz-opt-icon budget-icon">💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">Under $1,000</span><span class="quiz-opt-sub">Looking for a focused, high-impact fix</span></div></div>
+          <div class="quiz-opt s-opt" data-val="medium"><div class="quiz-opt-icon budget-icon">💵💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">$1,000–$3,000</span><span class="quiz-opt-sub">Ready to invest in something more complete</span></div></div>
+          <div class="quiz-opt s-opt" data-val="large"><div class="quiz-opt-icon budget-icon">💵💵💵</div><div class="quiz-opt-text"><span class="quiz-opt-label">$3,000+</span><span class="quiz-opt-sub">Looking for a comprehensive solution</span></div></div>
+          <div class="quiz-opt s-opt" data-val="unsure"><div class="quiz-opt-icon budget-icon">🤔</div><div class="quiz-opt-text"><span class="quiz-opt-label">Not sure yet</span><span class="quiz-opt-sub">I want to understand what's possible first</span></div></div>
         </div>
         <div class="quiz-nav"><button class="quiz-back" onclick="sPrevStep(4)">← Back</button><button class="quiz-next" id="snext4" disabled onclick="sShowResult()">See my results →</button></div>
       </div>
