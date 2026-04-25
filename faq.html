@@ -61,8 +61,8 @@
   .section h2 { font-size: 26px; font-weight: 600; color: #1c1c1e; margin-bottom: 32px; letter-spacing: -0.01em; line-height: 1.25; }
 
   /* PAGE HERO */
-  .page-hero { background: #eef5fb; border-bottom: 0.5px solid rgba(0,0,0,0.08); }
-  .page-hero-inner { max-width: 720px; margin: 0 auto; padding: 64px 40px 48px; }
+  .page-hero { background: #eef5fb; border-bottom: 0.5px solid rgba(0,0,0,0.08); position: relative; overflow: hidden; }
+  .page-hero-inner { max-width: 720px; margin: 0 auto; padding: 64px 40px 48px; position: relative; z-index: 2; }
   .page-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.07em; color: #185FA5; text-transform: uppercase; margin-bottom: 14px; }
   .page-hero h1 { font-size: 36px; font-weight: 600; line-height: 1.2; color: #1c1c1e; letter-spacing: -0.02em; }
 
@@ -174,6 +174,13 @@
     <div class="page-eyebrow">FAQ</div>
     <h1>Good questions we hear a lot</h1>
   </div>
+  <svg style="position:absolute;bottom:0;left:0;right:0;width:100%;height:50%;display:block;" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,200 L0,105 C80,105 120,52 200,38 C280,24 310,60 380,58 C450,56 500,10 580,8 C660,6 700,45 780,48 C860,51 920,20 1020,14 C1120,8 1160,50 1240,52 C1320,54 1380,30 1440,28 L1440,200 Z" fill="#C8DCF0" opacity="0.38"/>
+    <path d="M0,200 L0,130 C60,130 90,88 160,78 C230,68 265,100 320,98 C375,96 410,62 480,55 C550,48 580,82 650,85 C720,88 760,55 840,44 C920,33 955,75 1020,78 C1085,81 1120,52 1190,48 C1260,44 1300,80 1370,82 C1410,83 1430,70 1440,68 L1440,200 Z" fill="#B5D4F4" opacity="0.42"/>
+    <path d="M0,200 L0,152 C70,152 110,118 180,112 C250,106 285,132 350,130 C415,128 460,100 540,94 C620,88 660,120 740,124 C820,128 870,104 960,98 C1050,92 1090,126 1160,128 C1230,130 1280,108 1360,106 C1400,105 1425,118 1440,116 L1440,200 Z" fill="#85B7EB" opacity="0.35"/>
+    <path d="M0,200 L0,168 C120,168 180,150 320,148 C460,146 500,162 640,160 C780,158 840,142 1000,144 C1160,146 1240,162 1360,160 C1400,159 1425,162 1440,160 L1440,200 Z" fill="#deedf8" opacity="0.6"/>
+    <path d="M0,200 L0,186 C360,186 360,180 720,182 C1080,184 1080,179 1440,181 L1440,200 Z" fill="#cde7f6" opacity="0.72"/>
+  </svg>
 </div>
 
 <!-- FAQ SECTION -->
