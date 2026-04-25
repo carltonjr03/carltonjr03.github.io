@@ -205,7 +205,7 @@
   /* Services intro hero — matches homepage hero */
   .svc-intro-outer { position: relative; overflow: hidden; background: #eef5fb; }
   .svc-intro-mountains { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; display: block; width: 100%; height: 50%; }
-  .svc-intro { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; padding: 64px 48px 120px; }
+  .svc-intro { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; padding: 24px 48px 48px; }
   .svc-intro-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #185FA5; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
   .svc-intro-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: #185FA5; }
   .svc-intro h2 { font-size: 36px; font-weight: 600; color: #1c1c1e; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
@@ -219,8 +219,8 @@
   .uc-hdr-title { font-size: 22px; font-weight: 600; color: #1c1c1e; }
 
   /* Filter tabs */
-  .filter-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
-  .ftab { font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 99px; border: 1.5px solid rgba(0,0,0,0.1); background: #fff; color: #48484a; cursor: pointer; transition: all .15s; white-space: nowrap; }
+  .filter-tabs { display: flex; gap: 6px; flex-wrap: nowrap; overflow-x: auto; }
+  .ftab { font-size: 11.5px; font-weight: 500; padding: 6px 12px; border-radius: 99px; border: 1.5px solid rgba(0,0,0,0.1); background: #fff; color: #48484a; cursor: pointer; transition: all .15s; white-space: nowrap; flex-shrink: 0; }
   .ftab:hover { border-color: #185FA5; color: #185FA5; }
   .ftab.active { background: #185FA5; color: #fff; border-color: #185FA5; }
 
@@ -248,7 +248,7 @@
   .uc-price { font-size: 13px; font-weight: 600; color: #3a3a3e; }
 
   /* Back link */
-  .svc-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #185FA5; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; margin: 24px 48px 0; text-decoration: none; }
+  .svc-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #185FA5; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; margin: 4px 48px 0; text-decoration: none; }
   .svc-back:hover { color: #0C447C; }
   .svc-back svg { width: 14px; height: 14px; }
 
@@ -736,7 +736,7 @@
   <div class="svc-intro">
     <div class="svc-intro-eyebrow">Real results for WNC businesses</div>
     <h2>What could your business do<br>with <em>a few smarter tools?</em></h2>
-    <p>We don't sell technology — we solve business problems. Browse by industry to see exactly what we've built for businesses like yours, what it changed for them, and what it costs.</p>
+    <p>We don't sell technology — we solve business problems. Browse by industry and use case to see examples of what we can do, with costs.</p>
   </div>
   <svg class="svc-intro-mountains" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="
@@ -863,8 +863,7 @@
         <div class="uc-hdr-title">Filter by your industry</div>
       </div>
       <div class="filter-tabs" id="filterTabs">
-        <div class="ftab active" data-filter="all">All industries</div>
-        <div class="ftab" data-filter="hospitality">Restaurants &amp; Hospitality</div>
+        <div class="ftab active" data-filter="hospitality">Restaurants &amp; Hospitality</div>
         <div class="ftab" data-filter="healthcare">Healthcare Practices</div>
         <div class="ftab" data-filter="retail">Independent Retail</div>
         <div class="ftab" data-filter="contractors">Contractors &amp; Trades</div>
@@ -872,7 +871,7 @@
       </div>
     </div>
 
-    <div class="uc-count" id="ucCount">Showing <strong>all use cases</strong></div>
+    <div class="uc-count" id="ucCount">Showing <strong>Restaurants &amp; Hospitality</strong></div>
 
     <div class="uc-grid" id="ucGrid">
 
@@ -1192,15 +1191,19 @@
   };
 
   // ─── Use case filter ───
+  // Default: show hospitality only
+  document.querySelectorAll('.uc-card').forEach(card => {
+    if (card.dataset.industry !== 'hospitality') card.classList.add('uc-hidden');
+  });
+
   document.querySelectorAll('.ftab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       const filter = tab.dataset.filter;
       let count = 0;
-      document.querySelectorAll('.uc-card').forEach((card, i) => {
-        const match = filter === 'all' || card.dataset.industry === filter;
-        if (match) {
+      document.querySelectorAll('.uc-card').forEach((card) => {
+        if (card.dataset.industry === filter) {
           card.classList.remove('uc-hidden');
           card.style.animationDelay = (count * 0.05) + 's';
           card.style.animation = 'none';
@@ -1211,10 +1214,7 @@
           card.classList.add('uc-hidden');
         }
       });
-      const label = filter === 'all'
-        ? 'Showing <strong>all use cases</strong>'
-        : `Showing <strong>${count} use case${count !== 1 ? 's' : ''}</strong> for this industry`;
-      document.getElementById('ucCount').innerHTML = label;
+      document.getElementById('ucCount').innerHTML = `Showing <strong>${tab.textContent}</strong>`;
     });
   });
 
