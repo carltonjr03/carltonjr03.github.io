@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.blueridgeintelligence.com/">
   <meta property="og:title" content="Blue Ridge Intelligence — AI & Data Consulting | Asheville, NC">
-  <meta property="og:description" content="Blue Ridge Intelligence helps Western North Carolina small businesses save time and make smarter decisions with AI and data tools — no big-firm price tag, no tech-speak. Free 1-hour Business Intelligence Audit for WNC businesses.">
+  <meta property="og:description" content="Blue Ridge Intelligence helps Western North Carolina small businesses save time and make smarter decisions with AI and data tools — no big-firm price tag, no tech-speak. Free 1-hour AI-Readiness Audit for WNC businesses.">
   <meta property="og:image" content="https://www.blueridgeintelligence.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -28,7 +28,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Blue Ridge Intelligence — AI & Data Consulting | Asheville, NC">
-  <meta name="twitter:description" content="Practical AI and data tools for WNC small businesses. Free Business Intelligence Audit — no tech-speak, no big-firm price tag.">
+  <meta name="twitter:description" content="Practical AI and data tools for WNC small businesses. Free AI-Readiness Audit — no tech-speak, no big-firm price tag.">
   <meta name="twitter:image" content="https://www.blueridgeintelligence.com/og-image.png">
 
   <!-- JSON-LD Local Business Schema -->
@@ -49,7 +49,7 @@
     ],
     "knowsAbout": ["Artificial Intelligence", "Data Analytics", "Business Intelligence", "Workflow Automation", "Machine Learning", "Small Business Consulting"],
     "makesOffer": [
-      {"@type": "Offer", "name": "Free Business Intelligence Audit", "price": "0", "priceCurrency": "USD"},
+      {"@type": "Offer", "name": "Free AI-Readiness Audit", "price": "0", "priceCurrency": "USD"},
       {"@type": "Offer", "name": "AI Dashboard & Reporting"},
       {"@type": "Offer", "name": "AI Assistant & Chatbot"},
       {"@type": "Offer", "name": "Workflow Automation"}
@@ -101,9 +101,10 @@
   /* SERVICES GRID */
   .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .svc { background: #deedf8; border-radius: 12px; padding: 20px; }
-  .svc-icon { width: 32px; height: 32px; border-radius: 8px; background: #E6F1FB; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  .svc-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .svc-icon { width: 32px; height: 32px; border-radius: 8px; background: #E6F1FB; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .svc-icon svg { width: 16px; height: 16px; stroke: #185FA5; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .svc-name { font-size: 14px; font-weight: 600; color: #1c1c1e; margin-bottom: 5px; }
+  .svc-name { font-size: 14px; font-weight: 600; color: #1c1c1e; }
   .svc-desc { font-size: 13px; color: #48484a; line-height: 1.6; }
 
   /* DIVIDER */
@@ -416,24 +417,24 @@
         <a href="#" onclick="showServicesPage(); return false;" class="dropdown-featured" role="menuitem">What We Can Do For You</a>
         <div class="nav-dropdown-divider"></div>
         <a href="#" onclick="goHome('services'); return false;" role="menuitem">Overview</a>
-        <a href="#" onclick="goServicesAndQuiz(); return false;" role="menuitem">Your Business, Smarter — take the quiz</a>
-        <a href="#" onclick="goHome('audit'); return false;" role="menuitem">Free Business Intelligence Audit</a>
+        <a href="#" onclick="goServicesAndQuiz(); return false;" role="menuitem">Your Business, Smarter</a>
+        <a href="#" onclick="goHome('audit'); return false;" role="menuitem">Free AI-Readiness Audit</a>
       </div>
     </div>
     <a href="about.html">About</a>
     <a href="faq.html">FAQ</a>
   </div>
-  <a href="#" onclick="goHome('audit'); return false;" class="nav-cta">Book your free Business Intelligence Audit</a>
+  <a href="#" onclick="goHome('audit'); return false;" class="nav-cta">Book your free AI-Readiness Audit</a>
   <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
   <div class="mobile-nav-drawer" id="mobileMenu">
     <a href="#" onclick="showServicesPage(); closeMobileMenu(); return false;" class="mobile-link" style="color:#185FA5;font-weight:600;">What We Can Do For You</a>
-    <a href="#" onclick="goServicesAndQuiz(); closeMobileMenu(); return false;" class="mobile-link">Your Business, Smarter — take the quiz</a>
+    <a href="#" onclick="goServicesAndQuiz(); closeMobileMenu(); return false;" class="mobile-link">Your Business, Smarter</a>
     <a href="#" onclick="goHome('services'); closeMobileMenu(); return false;" class="mobile-link">Services Overview</a>
     <a href="about.html" class="mobile-link">About</a>
     <a href="faq.html" class="mobile-link">FAQ</a>
-    <a href="#" onclick="goHome('audit'); closeMobileMenu(); return false;" class="mobile-cta">Book your free Business Intelligence Audit</a>
+    <a href="#" onclick="goHome('audit'); closeMobileMenu(); return false;" class="mobile-cta">Book your free AI-Readiness Audit</a>
   </div>
 </nav>
 
@@ -446,11 +447,11 @@
   <h1>Your business runs on gut feel.<br>Imagine what it could do with data.</h1>
   <p class="hero-sub">Blue Ridge Intelligence helps Western North Carolina small businesses put AI and data to work — without the big-firm price tag or the confusing tech-speak. Just clear, practical tools that make your day easier and your decisions smarter.</p>
   <div class="hero-btns">
-    <a href="#audit" class="btn-primary">Book your free Business Intelligence Audit</a>
+    <a href="#audit" class="btn-primary">Book your free AI-Readiness Audit</a>
     <a href="#" onclick="showServicesPage(); return false;" class="btn-ghost">See what we do &rarr;</a>
   </div>
   <div style="margin-top:14px;">
-    <a href="#" onclick="goServicesAndQuiz(); return false;" style="font-size:14px;font-weight:500;padding:13px 24px;border-radius:9px;background:transparent;border:1.5px solid #185FA5;color:#185FA5;text-decoration:none;display:inline-block;">Your Business, Smarter — take the quiz →</a>
+    <a href="#" onclick="goServicesAndQuiz(); return false;" style="font-size:14px;font-weight:500;padding:13px 24px;border-radius:9px;background:transparent;border:1.5px solid #185FA5;color:#185FA5;text-decoration:none;display:inline-block;">Your Business, Smarter →</a>
   </div>
 </section>
 
@@ -570,31 +571,39 @@
   <p class="section-body">You don't need a full-time data team or a six-figure software contract. A few smart tools, set up right, can save you hours every week and help you see your business more clearly than ever before.</p>
   <div class="services-grid">
     <div class="svc">
-      <div class="svc-icon">
-        <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5"/><path d="M8 5v3l2 2"/></svg>
+      <div class="svc-header">
+        <div class="svc-icon">
+          <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="5"/><path d="M8 5v3l2 2"/></svg>
+        </div>
+        <div class="svc-name">AI assistant setup</div>
       </div>
-      <div class="svc-name">AI assistant setup</div>
       <div class="svc-desc">A custom Claude-powered assistant trained on your business — answers customer questions, drafts emails, and handles repetitive tasks 24/7.</div>
     </div>
     <div class="svc">
-      <div class="svc-icon">
-        <svg viewBox="0 0 16 16"><path d="M2 12l4-4 3 3 5-6"/></svg>
+      <div class="svc-header">
+        <div class="svc-icon">
+          <svg viewBox="0 0 16 16"><path d="M2 12l4-4 3 3 5-6"/></svg>
+        </div>
+        <div class="svc-name">Data dashboards</div>
       </div>
-      <div class="svc-name">Data dashboards</div>
       <div class="svc-desc">Stop digging through spreadsheets. We build live dashboards that show you exactly what's happening in your business at a glance.</div>
     </div>
     <div class="svc">
-      <div class="svc-icon">
-        <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1"/><path d="M5 7h6M5 10h4"/></svg>
+      <div class="svc-header">
+        <div class="svc-icon">
+          <svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="10" rx="1"/><path d="M5 7h6M5 10h4"/></svg>
+        </div>
+        <div class="svc-name">Workflow automation</div>
       </div>
-      <div class="svc-name">Workflow automation</div>
       <div class="svc-desc">Reports, invoices, follow-up emails, scheduling, data entry — we identify what's eating your time and automate it so you can focus on what you do best.</div>
     </div>
     <div class="svc">
-      <div class="svc-icon">
-        <svg viewBox="0 0 16 16"><path d="M8 2v4m0 4v4M2 8h4m4 0h4"/></svg>
+      <div class="svc-header">
+        <div class="svc-icon">
+          <svg viewBox="0 0 16 16"><path d="M8 2v4m0 4v4M2 8h4m4 0h4"/></svg>
+        </div>
+        <div class="svc-name">Team AI training</div>
       </div>
-      <div class="svc-name">Team AI training</div>
       <div class="svc-desc">A hands-on workshop that teaches your team how to use AI tools confidently — tailored to your industry, your tools, and your actual daily work.</div>
     </div>
   </div>
@@ -674,7 +683,7 @@
     <div class="hiw-steps">
       <div class="hiw-step">
         <div class="hiw-num">1</div>
-        <div class="hiw-title">Free Business Intelligence Audit</div>
+        <div class="hiw-title">Free AI-Readiness Audit</div>
         <div class="hiw-desc">We spend an hour walking through how your business currently runs — what's taking too long, what's unclear, and where data could help most. No tech knowledge required.</div>
       </div>
       <div class="hiw-step">
@@ -694,10 +703,10 @@
 <div class="audit-section" id="audit">
   <div class="audit-inner">
     <h2>Not sure where to start?<br>Let's figure it out together — for free.</h2>
-    <p class="audit-sub">Book a no-pressure, 1-hour Business Intelligence Audit. We'll look at how your business currently runs, identify where AI and data tools could save you the most time and money, and leave you with a clear picture of your options — whether you hire us or not.</p>
+    <p class="audit-sub">Book a no-pressure, 1-hour AI-Readiness Audit. We'll look at how your business currently runs, identify where AI and data tools could save you the most time and money, and leave you with a clear picture of your options — whether you hire us or not.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center;">
-      <a href="mailto:jono.carlton@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free Business Intelligence Audit</a>
-      <a href="#" onclick="goServicesAndQuiz();return false;" style="font-size:14px;font-weight:500;padding:13px 24px;border-radius:9px;background:transparent;border:1.5px solid #185FA5;color:#185FA5;text-decoration:none;display:inline-block;">Your Business, Smarter — take the quiz →</a>
+      <a href="mailto:jono.carlton@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free AI-Readiness Audit</a>
+      <a href="#" onclick="goServicesAndQuiz();return false;" style="font-size:14px;font-weight:500;padding:13px 24px;border-radius:9px;background:transparent;border:1.5px solid #185FA5;color:#185FA5;text-decoration:none;display:inline-block;">Your Business, Smarter →</a>
     </div>
     <p class="audit-fine">No cost. No commitment. Just a conversation.</p>
   </div>
@@ -1099,7 +1108,7 @@
           <div id="sResultUCs"></div>
         </div>
         <div class="quiz-result-btns">
-          <a href="mailto:jono.carlton@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="quiz-result-primary">Book your free Business Intelligence Audit</a>
+          <a href="mailto:jono.carlton@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="quiz-result-primary">Book your free AI-Readiness Audit</a>
         </div>
         <button class="quiz-restart" onclick="sRestartQuiz()">↩ Start over</button>
       </div>
@@ -1110,8 +1119,8 @@
   <div class="audit-section">
     <div class="audit-inner">
       <h2>Not sure what applies to your business?<br>Let's figure it out — for free.</h2>
-      <p class="audit-sub">Book a no-pressure, 1-hour Business Intelligence Audit. We'll look at how you currently operate, identify where AI and data tools could save you the most time and money, and leave you with a clear picture — whether you hire us or not.</p>
-      <a href="mailto:jono.carlton@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free Business Intelligence Audit</a>
+      <p class="audit-sub">Book a no-pressure, 1-hour AI-Readiness Audit. We'll look at how you currently operate, identify where AI and data tools could save you the most time and money, and leave you with a clear picture — whether you hire us or not.</p>
+      <a href="mailto:jono.carlton@blueridgeintelligence.com?subject=AI Readiness Audit Request" class="audit-btn">Book your free AI-Readiness Audit</a>
       <p class="audit-fine">No cost. No commitment. Just a conversation.</p>
     </div>
   </div>
