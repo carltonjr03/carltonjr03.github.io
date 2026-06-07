@@ -1,0 +1,86 @@
+name: BRI Weekly Blog Agent
+
+on:
+  # Runs every Monday at 9:00 AM EST (14:00 UTC)
+  schedule:
+    - cron: '0 14 * * MON'
+
+  # Also lets you trigger it manually from the GitHub Actions UI
+  # Useful for testing or running off-schedule
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'publish'
+        type: choice
+        options:
+          - publish      # Publish live to site + LinkedIn
+          - draft        # Commit as Jekyll draft, skip LinkedIn
+          - dry-run      # Generate only, no commits or posts
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    # Only run on the main branch (protects against accidental runs from PRs)
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - name: Checkout blog agent repo
+        uses: actions/checkout@v4
+        with:
+          # Use a PAT (Personal Access Token) so the agent can push back to the repo
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install anthropic requests
+
+      - name: Determine run mode
+        id: mode
+        run: |
+          # Default to 'publish' on scheduled runs; use input on manual runs
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+          else
+            echo "mode=publish" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run BRI Blog Agent
+        env:
+          ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN:           ${{ secrets.GH_PAT }}
+          GITHUB_REPO:            ${{ secrets.GITHUB_REPO }}
+          GITHUB_BRANCH:          main
+          POSTS_DIR:              _posts
+          DRAFTS_DIR:             _drafts
+          LINKEDIN_ACCESS_TOKEN:  ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_AUTHOR_URN:    ${{ secrets.LINKEDIN_AUTHOR_URN }}
+          NOTIFY_EMAIL:           ${{ secrets.NOTIFY_EMAIL }}
+          SENDGRID_API_KEY:       ${{ secrets.SENDGRID_API_KEY }}
+        run: |
+          MODE="${{ steps.mode.outputs.mode }}"
+          echo "Running in mode: $MODE"
+
+          if [ "$MODE" = "dry-run" ]; then
+            python blog_agent.py --dry-run
+          elif [ "$MODE" = "draft" ]; then
+            python blog_agent.py --draft
+          else
+            python blog_agent.py
+          fi
+
+      - name: Upload run log as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-run-log-${{ github.run_id }}
+          path: posts_log/run_log.json
+          if-no-files-found: ignore
