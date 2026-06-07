@@ -31,7 +31,7 @@ jobs:
       - name: Checkout blog agent repo
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -51,16 +51,6 @@ jobs:
           else
             echo "mode=publish" >> $GITHUB_OUTPUT
           fi
-          
-     - name: Debug auth
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
-          echo "Token length: ${#GH_PAT}"
-          echo "Token prefix: ${GH_PAT:0:10}"
-          curl -s -o /dev/null -w "%{http_code}" \
-            -H "Authorization: Bearer $GH_PAT" \
-            https://api.github.com/user
             
       - name: Run BRI Blog Agent
         env:
