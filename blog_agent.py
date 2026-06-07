@@ -293,9 +293,16 @@ def run(dry_run: bool = False, draft: bool = False):
         if block.type == "text":
             raw_text = block.text
 
-    # Strip any accidental markdown fences
-    raw_text = re.sub(r"^```json\s*", "", raw_text.strip())
-    raw_text = re.sub(r"\s*```$", "", raw_text.strip())
+# Extract JSON — find the first { and last } to handle any preamble or fences
+    json_match = re.search(r'\{.*\}', raw_text, re.DOTALL)
+    if not json_match:
+        print(f"ERROR: No JSON object found in Claude output.\nRaw output:\n{raw_text[:500]}")
+        send_notification(
+            "BRI Blog Agent FAILED — no JSON found",
+            f"Raw output:\n{raw_text[:800]}",
+        )
+        sys.exit(1)
+    raw_text = json_match.group(0)
 
     try:
         post = json.loads(raw_text)
