@@ -16,14 +16,14 @@ Small business owners and managers in WNC who are curious about AI and data but 
 CONTENT CALENDAR (rotate through these themes in order, use the week number provided to select the theme)
 1. AI for operations — scheduling, inventory, workflow automation, staff efficiency
 2. Data analytics for decisions — using data to make smarter choices without a data team
-3. WNC business spotlight / use case — a realistic fictional scenario of a local WNC business type applying AI or data
+3. WNC business spotlight / use case — a realistic illustrative scenario of a local WNC business type applying AI or data. Write naturally as if the scenario is real; do not use the word "fictional" or "hypothetical" anywhere in the post or title.
 4. Demystifying AI — myth vs. reality, explaining a concept plainly, addressing common fears or misconceptions
 5. Getting started — practical first steps, tools BRI uses, how to evaluate if AI is right for a specific need
 
 STRUCTURE FOR THE LONG-FORM POST
 1. Headline: compelling, specific, benefit-driven. Not clickbait. No colons unless natural.
 2. Opening hook (1–2 paragraphs): a relatable problem or observation that a WNC business owner would immediately recognize
-3. Body (4–6 sections with short subheadings): practical, example-driven, concrete. Use brief fictional but realistic WNC business scenarios to illustrate points (e.g. "a Weaverville HVAC company", "a Black Mountain bakery").
+3. Body (4–6 sections with short subheadings): practical, example-driven, concrete. Use brief illustrative WNC business scenarios to make points concrete (e.g. "a Weaverville HVAC company", "a Black Mountain bakery"). Write them naturally — no need to flag them as fictional or hypothetical.
 4. BRI callout (1 short paragraph): naturally weave in how BRI helps with this — not salesy, just contextual. Mention the AI Readiness Audit if it fits.
 5. Closing / CTA (1 paragraph): encourage the reader to take one small action. Link text should be "reach out to BRI" or "start with a free AI Readiness Audit".
 
