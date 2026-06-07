@@ -28,9 +28,9 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 ANTHROPIC_API_KEY   = os.environ.get("ANTHROPIC_API_KEY", "")
-GITHUB_TOKEN        = os.environ.get("GITHUB_TOKEN", "")
-GITHUB_REPO         = os.environ.get("GITHUB_REPO", "your-github-username/blueridgeintelligence.com")
-GITHUB_BRANCH       = os.environ.get("GITHUB_BRANCH", "main")
+GITHUB_TOKEN        = os.environ.get("GH_PAT", "")
+GITHUB_REPO         = os.environ.get("GH_REPO", "carltonjr03/blueridgeintelligence.com")
+GITHUB_BRANCH       = os.environ.get("GH_BRANCH", "main")
 POSTS_DIR           = os.environ.get("POSTS_DIR", "_posts")       # Jekyll posts folder in your repo
 DRAFTS_DIR          = os.environ.get("DRAFTS_DIR", "_drafts")     # Jekyll drafts folder
 
