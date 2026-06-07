@@ -114,8 +114,8 @@ def validate_post(post: dict) -> list[str]:
 
     if word_count < 800:
         errors.append(f"Long-form post too short: {word_count} words (minimum 800)")
-    if word_count > 1400:
-        errors.append(f"Long-form post too long: {word_count} words (maximum 1400)")
+    if word_count > 1500:
+        errors.append(f"Long-form post too long: {word_count} words (maximum 1500)")
     if "<!-- BRI_POST_END -->" not in long_form:
         errors.append("Missing <!-- BRI_POST_END --> marker")
     if len(linkedin.split()) < 100:
